@@ -1,4 +1,6 @@
-﻿$(function () {
+﻿var _isMute = false;
+
+$(function () {
     var canvas = document.getElementById("image_panel");
     if (typeof G_vmlCanvasManager != "undefined") {
         canvas = G_vmlCanvasManager.initElement(canvas);
@@ -18,6 +20,13 @@
 function events(ctx, img) {
     // -------------------------------------------------------
     // game_play_button
+    $("#game_play_button").click(function () {
+        playSound("click_sound");
+        alert("準備中です");
+    });
+    $("#game_play_button").mouseover(function () {
+        playSound("hover_sound");
+    });
     $("#game_play_button").hover(function () {
         ctx.drawImage(img, 0, 1000, 600, 500, 0, 0, 600, 500);
     }, function () {
@@ -26,9 +35,36 @@ function events(ctx, img) {
 
     // -------------------------------------------------------
     // sound_stop_button
+    $("#sound_stop_button").click(function () {
+        if (!_isMute) {
+            pauseBgm();
+        } else {
+            playBgm();
+        }
+        playSound("click_sound");
+    });
     $("#sound_stop_button").hover(function () {
+        playSound("hover_sound");
         ctx.drawImage(img, 0, 500, 600, 500, 0, 0, 600, 500);
     }, function () {
         ctx.drawImage(img, 0, 0, 600, 500, 0, 0, 600, 500);
     });
+}
+
+/* ---------------------------------------------------
+ * 共通部分
+ */
+function playSound(id) {
+    if (!_isMute) {
+        document.getElementById(id).load();
+        document.getElementById(id).play();
+    }
+}
+function pauseBgm() {
+    document.getElementById("main_bgm").pause();
+    _isMute = true;
+}
+function playBgm() {
+    document.getElementById("main_bgm").play();
+    _isMute = false;
 }

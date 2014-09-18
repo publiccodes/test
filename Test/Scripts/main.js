@@ -18,6 +18,7 @@ $(function () {
 });
 
 function events(ctx, img) {
+    var x = 0, y = 0;
     // -------------------------------------------------------
     // game_play_button
     $("#game_play_button").click(function () {
@@ -28,9 +29,19 @@ function events(ctx, img) {
         playSound("hover_sound");
     });
     $("#game_play_button").hover(function () {
-        ctx.drawImage(img, 0, 1000, 600, 500, 0, 0, 600, 500);
+        if (_isMute) {
+            x = 0; y = 1500;
+        } else {
+            x = 0; y = 1000;
+        }
+        ctx.drawImage(img, x, y, 600, 500, 0, 0, 600, 500);
     }, function () {
-        ctx.drawImage(img, 0, 0, 600, 500, 0, 0, 600, 500);
+        if (_isMute) {
+            x = 0; y = 500;
+        } else {
+            x = 0; y = 0;
+        }
+        ctx.drawImage(img, x, y, 600, 500, 0, 0, 600, 500);
     });
 
     // -------------------------------------------------------
@@ -44,10 +55,17 @@ function events(ctx, img) {
         playSound("click_sound");
     });
     $("#sound_stop_button").hover(function () {
+        x = 0;
+        y = 500;
         playSound("hover_sound");
-        ctx.drawImage(img, 0, 500, 600, 500, 0, 0, 600, 500);
+        ctx.drawImage(img, x, y, 600, 500, 0, 0, 600, 500);
     }, function () {
-        ctx.drawImage(img, 0, 0, 600, 500, 0, 0, 600, 500);
+        if (_isMute) {
+            x = 0; y = 500;
+        } else {
+            x = 0; y = 0;
+        }
+        ctx.drawImage(img, x, y, 600, 500, 0, 0, 600, 500);
     });
 }
 
@@ -64,6 +82,7 @@ function pauseBgm() {
     document.getElementById("main_bgm").pause();
     _isMute = true;
 }
+
 function playBgm() {
     document.getElementById("main_bgm").play();
     _isMute = false;

@@ -1,5 +1,8 @@
 ﻿$(function () {
     var canvas = document.getElementById('c1');
+    if (typeof G_vmlCanvasManager != 'undefined') {
+        canvas = G_vmlCanvasManager.initElement(canvas);
+    }
     if (!canvas || !canvas.getContext) { return false; }
     var ctx = canvas.getContext('2d');
     var img = new Image();
@@ -12,7 +15,6 @@
 
     $(canvas).mousemove(function (e) {
         var x = e.pageX - $(this).offset().left;
-        //Debug.writeln(x);
         if (x > 500) {
             ctx.drawImage(img, 0, 500, 600, 500, 0, 0, 600, 500);
             document.body.style.cursor = "pointer";

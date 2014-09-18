@@ -59,6 +59,8 @@
   <ItemGroup>
     <Content Include="Content\Images\images.gif" />
     <Content Include="index.html" />
+    <Content Include="Scripts\excanvas.compiled.js" />
+    <Content Include="Scripts\excanvas.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Web.config" />
   </ItemGroup>

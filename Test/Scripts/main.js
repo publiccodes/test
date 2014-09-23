@@ -1,8 +1,12 @@
 ﻿$(function () {
-    $("#ver").text("2");
+    $("#ver").text("3");
     initAudioTag();
     $("button").click(function () {
-        document.getElementById("bgm").play();
+        var bgm = document.getElementById("bgm");
+        bgm.load();
+        bgm.addEventListener("loadeddata", function () {
+            bgm.play();
+        });
     });
 });
 
@@ -15,7 +19,6 @@ function initAudioTag() {
     source.attr("src", getSrc1());
     audio.append(source);
     $("#test").append(audio);
-    document.getElementById("bgm").load();
 }
 
 function getSrc0() {

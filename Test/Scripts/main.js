@@ -2,7 +2,7 @@
 var _context = null;
 
 $(function () {
-    $("#ver").text("0");
+    $("#ver").text("1");
     $("button").click(function () {
         _img.src = "Content/Images/images1.gif";
         _img.onload = function () {
@@ -12,7 +12,7 @@ $(function () {
             canvas.width = 600;
             canvas.height = 500;
             alert("in");
-            setBackgroundImage(0, 500);
+            setBackgroundImage(0, 0);
 
         }
     });

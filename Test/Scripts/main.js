@@ -1,5 +1,5 @@
 ﻿$(function () {
-    $("#ver").text("1");
+    $("#ver").text("2");
     initAudioTag();
     $("button").click(function () {
         document.getElementById("bgm").play();
@@ -12,7 +12,7 @@ function initAudioTag() {
     audio.attr("loop", "loop");
 
     var source = $("<source type='audio/mp3'>");
-    source.attr("src", getSrc0());
+    source.attr("src", getSrc1());
     audio.append(source);
     $("#test").append(audio);
     document.getElementById("bgm").load();

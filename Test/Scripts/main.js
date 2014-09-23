@@ -1,5 +1,5 @@
 ﻿$(function () {
-    $("#ver").text("3");
+    $("#ver").text("4");
     initAudioTag();
     $("button").click(function () {
         var bgm = document.getElementById("bgm");

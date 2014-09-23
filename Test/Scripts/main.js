@@ -2,7 +2,7 @@
 var _context = null;
 
 $(function () {
-    $("#ver").text("10");
+    $("#ver").text("11");
     _img.src = "Content/Images/images3.gif";
     _img.onload = function () {
         alert("in!");

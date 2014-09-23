@@ -1,9 +1,9 @@
 ﻿$(function () {
-    $("#ver").text("5");
+    $("#ver").text("6");
     initAudioTag();
     $("button").click(function () {
         var bgm = document.getElementById("bgm");
-        bgm.load();
+        //bgm.load();
         //bgm.addEventListener("loadeddata", function () {
         //    bgm.play();
         //});

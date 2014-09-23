@@ -1,12 +1,12 @@
 ﻿$(function () {
-    $("#ver").text("4");
+    $("#ver").text("5");
     initAudioTag();
     $("button").click(function () {
         var bgm = document.getElementById("bgm");
         bgm.load();
-        bgm.addEventListener("loadeddata", function () {
-            bgm.play();
-        });
+        //bgm.addEventListener("loadeddata", function () {
+        //    bgm.play();
+        //});
     });
 });
 

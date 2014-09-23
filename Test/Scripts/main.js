@@ -2,9 +2,9 @@
 var _context = null;
 
 $(function () {
-    $("#ver").text("1");
+    $("#ver").text("2");
     $("button").click(function () {
-        _img.src = "Content/Images/images1.gif";
+        _img.src = "Content/Images/images2.gif";
         _img.onload = function () {
             var canvas = document.getElementById("image_panel");
             if (!canvas || !canvas.getContext) { return false; }

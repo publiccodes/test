@@ -2,8 +2,8 @@
 var _context = null;
 
 $(function () {
-    $("#ver").text("5");
-    _img.src = "Content/Images/images1.gif";
+    $("#ver").text("10");
+    _img.src = "Content/Images/images3.gif";
     _img.onload = function () {
         alert("in!");
         var canvas = document.getElementById("image_panel");

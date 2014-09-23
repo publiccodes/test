@@ -63,6 +63,7 @@
     <Content Include="Content\Css\main.css" />
     <Content Include="Content\Images\images1.gif" />
     <Content Include="Content\Images\images2.gif" />
+    <Content Include="Content\Images\images3.gif" />
     <Content Include="index.html" />
     <Content Include="Scripts\excanvas.compiled.js" />
     <Content Include="Scripts\excanvas.js" />

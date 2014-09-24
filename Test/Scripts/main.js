@@ -3,7 +3,7 @@ var _progress = 0;
 var _images = new Array();
 
 $(function () {
-    $("#ver").text("9");
+    $("#ver").text("10");
 
     var canvas = document.getElementById("image_panel");
     if (!canvas || !canvas.getContext) { return false; }
@@ -22,12 +22,12 @@ $(function () {
         }
         _images.push(img);
     }
-    setBackgroundImage(9, 1);
 });
 
 function setProgress() {
     $("#progress").text(_progress);
     if (_progress == 10) {
+        alert("in");
         setBackgroundImage(1, 1);
     }
 }

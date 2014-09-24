@@ -4,7 +4,7 @@ var _context = null;
 $(function () {
     $("#ver").text("2");
 
-    _img.src = "Content/Images/images2.jpg";
+    _img.src = "Content/Images/images4.gif";
     _img.onload = function () {
         var canvas = document.getElementById("image_panel");
         if (!canvas || !canvas.getContext) { return false; }

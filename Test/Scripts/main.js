@@ -2,7 +2,7 @@
 var _context = null;
 
 $(function () {
-    $("#ver").text("10");
+    $("#ver").text("0");
 
     _img.src = "Content/Images/images3.gif";
     _img.onload = function () {
@@ -12,6 +12,9 @@ $(function () {
         canvas.width = 600;
         canvas.height = 500;
         setBackgroundImage(0, 0);
+    }
+    _img.onerror = function () {
+        alert("読み込みに失敗しました。");
     }
 });
 

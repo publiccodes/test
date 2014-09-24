@@ -2,22 +2,16 @@
 var _context = null;
 
 $(function () {
-    $("#ver").text("12");
+    $("#ver").text("0");
 
-    if (window.Worker) {
-        alert("ok");
-    }
-
-    _img.src = "Content/Images/images3.gif";
+    //_img.src = "Content/Images/images3.gif";
     _img.onload = function () {
-        alert("in!");
         var canvas = document.getElementById("image_panel");
         if (!canvas || !canvas.getContext) { return false; }
         _context = canvas.getContext("2d");
         canvas.width = 600;
         canvas.height = 500;
         setBackgroundImage(0, 0);
-        alert("out!");
     }
 });
 

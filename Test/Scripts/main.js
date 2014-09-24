@@ -17,6 +17,9 @@ $(function () {
         img.onload = function () {
             setProgress();
         }
+        img.onerror = function () {
+            alert("ng");
+        }
         _images.push(img);
     }
 

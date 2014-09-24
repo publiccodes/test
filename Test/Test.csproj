@@ -61,6 +61,7 @@
     <Content Include="Content\Audio\hover.mp3" />
     <Content Include="Content\Audio\main.mp3" />
     <Content Include="Content\Css\main.css" />
+    <Content Include="Content\Images\images.jpg" />
     <Content Include="Content\Images\images1.gif" />
     <Content Include="Content\Images\images2.gif" />
     <Content Include="Content\Images\images3.gif" />

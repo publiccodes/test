@@ -1,24 +1,36 @@
-﻿var _img = new Image();
-var _context = null;
+﻿var _context = null;
+var _progress = 0;
+var _images = new Array();
 
 $(function () {
     $("#ver").text("2");
 
-    _img.src = "Content/Images/images4.gif";
-    _img.onload = function () {
-        var canvas = document.getElementById("image_panel");
-        if (!canvas || !canvas.getContext) { return false; }
-        _context = canvas.getContext("2d");
-        canvas.width = 600;
-        canvas.height = 500;
-        setBackgroundImage(0, 0);
+    var canvas = document.getElementById("image_panel");
+    if (!canvas || !canvas.getContext) { return false; }
+    _context = canvas.getContext("2d");
+    canvas.width = 600;
+    canvas.height = 500;
+
+    for (var i = 0; i < 10; i++) {
+        var img = new Image();
+        img.src = "Content/Images/0" + i + ".gif";
+        img.onload = function () {
+            setProgress();
+        }
+        _images.push(img);
     }
-    _img.onerror = function () {
-        alert("読み込みに失敗しました。");
-    }
+
 });
 
-function setBackgroundImage(x, y) {
-    _context.drawImage(_img, x, y, 600, 500, 0, 0, 600, 500);
+function setProgress() {
+    Debug.writeln(_progress++);
+    if (_progress == 10) {
+        setBackgroundImage(1, 1);
+    }
+}
+
+function setBackgroundImage(column, row) {
+    row = row * 500;
+    _context.drawImage(_images[column], 0, row, 600, 500, 0, 0, 600, 500);
 }
 

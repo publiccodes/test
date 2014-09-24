@@ -3,7 +3,7 @@ var _progress = 0;
 var _images = new Array();
 
 $(function () {
-    $("#ver").text("7");
+    $("#ver").text("8");
 
     var canvas = document.getElementById("image_panel");
     if (!canvas || !canvas.getContext) { return false; }
@@ -15,7 +15,7 @@ $(function () {
         var img = new Image();
         img.src = "Content/Images/0" + i + ".gif";
         img.onload = function () {
-        alert("in");
+            alert("in");
             setProgress();
         }
         img.onerror = function () {
@@ -27,7 +27,6 @@ $(function () {
 });
 
 function setProgress() {
-    Debug.writeln(_progress++);
     $("#progress").text(_progress);
     if (_progress == 10) {
         setBackgroundImage(1, 1);

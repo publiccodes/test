@@ -3,7 +3,7 @@ var _progress = 0;
 var _images = new Array();
 
 $(function () {
-    $("#ver").text("6");
+    $("#ver").text("7");
 
     var canvas = document.getElementById("image_panel");
     if (!canvas || !canvas.getContext) { return false; }
@@ -14,8 +14,8 @@ $(function () {
     for (var i = 0; i < 10; i++) {
         var img = new Image();
         img.src = "Content/Images/0" + i + ".gif";
-        alert("in");
         img.onload = function () {
+        alert("in");
             setProgress();
         }
         img.onerror = function () {

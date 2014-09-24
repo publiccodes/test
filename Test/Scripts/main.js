@@ -12,22 +12,17 @@ $(function () {
     canvas.height = 500;
 
     for (var i = 0; i < 10; i++) {
-        var img = new Image();
-        img.src = "Content/Images/0" + i + ".gif";
-        img.onload = function () {
+        _images.push(new Image());
+        _images[i].src = "Content/Images/0" + i + ".gif";
+        _images[i].onload = function () {
             setProgress();
         }
-        img.onerror = function () {
-            alert("ng");
-        }
-        _images.push(img);
     }
 });
 
 function setProgress() {
-    $("#progress").text(_progress);
+    $("#progress").text(_progress++);
     if (_progress == 10) {
-        alert("in");
         setBackgroundImage(1, 1);
     }
 }

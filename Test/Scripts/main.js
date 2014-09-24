@@ -3,7 +3,7 @@ var _progress = 0;
 var _images = new Array();
 
 $(function () {
-    $("#ver").text("2");
+    $("#ver").text("3");
 
     var canvas = document.getElementById("image_panel");
     if (!canvas || !canvas.getContext) { return false; }
@@ -24,6 +24,7 @@ $(function () {
 
 function setProgress() {
     Debug.writeln(_progress++);
+    $("#progress").text(_progress);
     if (_progress == 10) {
         setBackgroundImage(1, 1);
     }
